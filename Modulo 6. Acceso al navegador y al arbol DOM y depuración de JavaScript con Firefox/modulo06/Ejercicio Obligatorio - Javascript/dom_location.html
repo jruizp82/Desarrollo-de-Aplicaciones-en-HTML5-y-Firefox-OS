@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM Location</title>
+</head>
+
+<body>
+
+<h2> Location </h2>
+
+<table id="tabla" border="1px"> 
+		<tr>
+			<td>   
+				<h3 align="center">Propiedad</h3>
+			</td>
+			<td>   
+				<h3 align="center">Valor</h3>
+			</td>
+		</tr>
+</table>
+
+<script>
+
+var tabla = document.getElementById("tabla");
+var i = 0;
+
+for (i in location){
+	if (typeof location[i] === "string")
+		tabla.innerHTML += "<tr><td>" +i+ "</td><td align='center'> "+location[i]+ "</td></tr>";
+	else
+		tabla.innerHTML += "<tr><td>" +i+ "</td><td align='center'> No es imprimible </td></tr>";
+}
+</script>
+</body>
+</html>

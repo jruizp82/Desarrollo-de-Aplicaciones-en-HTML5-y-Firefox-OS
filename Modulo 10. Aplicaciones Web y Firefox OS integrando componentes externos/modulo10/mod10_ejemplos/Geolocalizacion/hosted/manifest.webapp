@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "name": "Geolocalizacion",
+  "description": "Mapa de Rutas con Geolocalizacion",
+  "launch_path": "/host/0BzQe7iODlzIrTGVIRFUzaGx3Z00/index.html",
+  "icons": {
+    "16":  "/host/0BzQe7iODlzIrTGVIRFUzaGx3Z00/ico_16.png",
+    "48":  "/host/0BzQe7iODlzIrTGVIRFUzaGx3Z00/ico_48.png",
+    "128": "/host/0BzQe7iODlzIrTGVIRFUzaGx3Z00/ico_128.png"
+  },
+  "developer": {
+    "name": "Juan Antonio Ruiz"
+  },
+  "permissions": {
+  "geolocation": {
+  "description": "Necesario para mostrar su ubicación."
+  },
+  "storage": {
+  "description": "Almacena datos localmente."
+  }
+  }
+} 
+  

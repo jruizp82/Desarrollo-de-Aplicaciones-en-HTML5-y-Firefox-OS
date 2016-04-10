@@ -1,0 +1,54 @@
+*{
+	margin	:0;
+	padding	:0;
+}
+
+@font-face{
+	font-family: "firefontRegular";
+	src:url('../fonts/FiraSansOT-Regular.otf');
+}
+
+@font-face{
+	font-family: "firefontLight";
+	src:url('../fonts/FiraSansOT-Light.otf');
+}
+
+#cabecera{
+  padding:1rem;
+  margin:0;
+  background-color:#CD6723;
+}
+
+#title{
+	color:#ffffff;
+	font-family: "firefontRegular";
+    font-size: 1.5rem
+
+}
+
+#reiniciar{
+  font-family: "firefontLight";
+  
+  display: block;
+  margin: 0;
+  padding: 0;
+  float: right;
+ 
+ /* position: absolute;
+  top: 0;           
+  left: 0;
+  right: 0;
+  height: 50px;*/
+}
+
+#map{
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute; /* posiciÃ³n absoluta a navegador */
+  top: 61px;      /* 50px debajo de borde de navegador */
+  left: 0;        /* ajusta a borde de navegador */
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+}

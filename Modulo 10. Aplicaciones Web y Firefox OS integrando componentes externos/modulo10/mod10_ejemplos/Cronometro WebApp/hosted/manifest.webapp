@@ -1,0 +1,15 @@
+{
+  "version": "5.0",
+  "name": "Cronometro",
+  "description": "Cronometro de centesimas",
+  "launch_path": "/host/0BzQe7iODlzIrZnlhN2RoU0VVdzA/cronometro.html",
+  "icons": {
+    "16":  "/host/0BzQe7iODlzIrZnlhN2RoU0VVdzA/ico_16.png",
+    "48":  "/host/0BzQe7iODlzIrZnlhN2RoU0VVdzA/ico_48.png",
+    "128": "/host/0BzQe7iODlzIrZnlhN2RoU0VVdzA/ico_128.png"
+  },
+  "developer": {
+    "name": "Juan Antonio Ruiz",
+    "url": "http://internetng.dit.upm.es"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><title>Cronómetro</title><meta charset="UTF-8">
+<script type="text/javascript" src="zepto.min.js" > </script>
+<script type="text/javascript" src="touch.js" > </script>
+<script type="text/javascript">
+  $(function(){
+    localStorage.c = (localStorage.c || "0.00"); // guarda la cuenta en centésimas de segundo
+	localStorage.l = (localStorage.l || "");	 // guarda los tiempos de la lista
+
+    var t, cl = $("#crono");	
+	var touch = $("#body");		// variable para manejar los eventos touch
+	var lista = $("#lista");	// variable que almacena los tiempos de la lista
+	lista.html(localStorage.l); // se carga en pantalla los tiempos almacenados si los hubiera
+
+    function incr()     { localStorage.c = +localStorage.c + 0.01; }; 			// se incrementa el valor en 0.01
+    function mostrar()  { cl.html((+localStorage.c).toFixed(2)); };				// se muestra el tiempo ajustado a 2 decimales
+    function arrancar() { t=setInterval(function(){incr(); mostrar()}, 10);};	// arranca el cronómetro, se ejecuta cada 10 milisegundos
+    function parar()    { clearInterval(t);  t=undefined; listar()};			// para el cronómetro y llama a la funcion listar()
+    function cambiar()  { if (!t) {arrancar(); $("#inicializar").attr('disabled', 'disabled'); touch.off('swipe');} // si el cronómetro está parado lo arranca y deshabilita el botón inicializar y el swipe
+						  else {parar(); $("#inicializar").removeAttr('disabled'); touch.on('swipe', limpiar);} }; // sino lo para y habilita el botón inicializar y el swipe
+	function listar()   { lista.html(localStorage.l + (+localStorage.c).toFixed(2) + "</br>"); // se muestra el contenido de la lista de tiempos más el nuevo tiempo
+						  localStorage.l = lista.html(); }; // se actualiza la variable con todos los tiempos
+    function limpiar()  { localStorage.c = "0.00"; mostrar(); localStorage.l = ""; lista.html("");} // pone el tiempo a 0.00 y se vacia la lista
+
+    $("#cambiar").on('click', cambiar); // un click llama al método cambiar
+    $("#inicializar").on('click', limpiar); // un click llama al método limpiar
+    mostrar();
+	touch.on('tap',cambiar); // evento tap llama al método cambiar
+	touch.on('swipe', limpiar); // evento swipe llama al método limpiar
+  });
+</script>
+</head>
+<body id="body">
+<h2>Cronómetro</h2>
+
+<h3><span id="crono"> 0.00 </span> segundos </h3>
+
+<button type="button" id="cambiar"> arrancar/parar </button>
+<button type="button" id="inicializar">  inicializar </button>
+
+<h3>Tiempos almacenados:</h3>
+
+<div id="lista"></div>
+
+</body>
+</html>

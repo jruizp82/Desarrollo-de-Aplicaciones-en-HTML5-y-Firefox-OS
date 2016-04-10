@@ -1,0 +1,12 @@
+{
+  "version": "5.0",
+
+  "name": "Cronometro",
+
+  "package_path": "https://googledrive.com/host/0BzQe7iODlzIrMXRBZmlHZG1JUFk/package.zip",
+  
+  "developer": {
+    "name": "Juan Antonio Ruiz",
+    "url": "http://internetng.dit.upm.es"
+  }
+}
